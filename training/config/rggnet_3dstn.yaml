@@ -1,0 +1,157 @@
+name: 'rggnet_3dstn'
+
+tensors:
+  placeholders:
+    inputs:
+      x_dm:
+        shape: [375, 1242, 5]
+      x_cam:
+        shape: [375, 1242, 3]
+      x_R_rects:
+        shape: [3, 3]
+      x_P_rects:
+        shape: [3, 4]
+    outputs:
+      y_dm:
+        shape: [375, 1242, 5]
+      y_se3param:
+        shape: [6]
+  hyper_params:
+    vae_latent_dim: 100
+    vae_h: 160
+    vae_w: 640
+    regularizer_factor: 0.000000001
+
+train:
+  stop_val_loss_decrease: -0.05
+  epochs: 100
+  val_epoch: 1
+  save_epoch: 1
+  batch_size: 8
+  start_learning_rate: 0.0001
+  lr_decay_step: 2000
+  lr_decay_rate: 0.96
+  pre_trained_weights:
+    -
+      load: True
+      ckpts_dir: './save/vae/${replace_with_experiment_id}/'
+      excluded_tensor_names: []
+      included_tensor_names: ['Tolerance_Regularization']
+    -
+      load: True
+      model_dir: './resnet_v2_50_2017_04_14/resnet_v2_50.ckpt'
+      excluded_tensor_names: []
+      included_tensor_names: []
+    - # This subsection is used for load pretrained RGGNet for continuing training
+      load: False
+      ckpts_dir: './save/rggnet_novae/${replace_with_experiment_id}/'
+      excluded_tensor_names: ['Loss']
+      included_tensor_names: []
+
+
+  continue_training: False
+  optimizer_var_list: []
+  devices:
+    GPU: 1
+
+machine:
+  save_dir: './save/rggnet_3dstn/'
+  log_dir: './log/rggnet_3dstn/'
+
+
+data:
+  num_parallel_reads: 4
+  inputs:
+    # Ensure, this key is the same the model.tensor_dict
+    x_dm:
+      modality: 'image'
+      data_type: 'float32'
+      nhwc: True
+      H: 375
+      W: 1242
+      C: 5 # (X, Y, Z, i, Zcam_normed)
+      # Feature listed below will be random chosen on the fly
+      feature_names:
+        - 'x_dm'
+    x_cam:
+      modality: 'image'
+      data_type: 'float32'
+      nhwc: True
+      H: 375
+      W: 1242
+      C: 3   # (R, G, B)   (0, 255.)
+      # Feature listed below will be random chosen on the fly
+      feature_names:
+        - 'x_cam'
+
+    x_R_rects:
+      modality: 'matrix'
+      data_type: 'float32'
+      shape: [3, 3]
+      # Feature listed below will be random chosen on the fly
+      feature_names:
+        - 'x_R_rects'
+
+    x_P_rects:
+      modality: 'matrix'
+      data_type: 'float32'
+      shape: [3, 4]
+      # Feature listed below will be random chosen on the fly
+      feature_names:
+        - 'x_P_rects'
+
+    y_dm:
+      modality: 'image'
+      data_type: 'float32'
+      nhwc: True
+      H: 375
+      W: 1242
+      C: 5
+      # Feature listed below will be random chosen on the fly
+      feature_names:
+        - 'y_dm'
+
+    y_se3param:
+      modality: 'vector'
+      data_type: 'float32'
+      shape: [6]
+      # Feature listed below will be random chosen on the fly
+      feature_names:
+        - 'y_se3param'
+
+  # Below are configs for tfrecords files
+  compression_type: '' # no compression
+  suffix: 'tfrecord'
+  tfrecords_train_dirs:
+    - "kitti/tfrecords/train/"
+    - "kitti/tfrecords/train/trans/"
+    - "kitti/tfrecords/train/rot/"
+    # Below is for RGGNet+
+    - "kitti/tfrecords/train/1003/"
+
+  # You shall create your own validation datasets
+  # Below is just for reference
+  tfrecords_test_dirs:
+    - 'kitti/tfrecords/test/T1/'
+    - 'kitti/tfrecords/test/T2a/'
+    - 'kitti/tfrecords/test/T2b/'
+    - 'kitti/tfrecords/test/T3/'
+
+  # This is only for unit-testing - deprecated
+  tfrecords_toy_dirs:
+    - "kitti/tfrecords/toy/"
+
+# Below is to productionize the checkpoints
+# It will load the below scope tensors into the rggnet forward graph
+
+inference:
+  included_tensor_names:
+  - 'Pre_Process_Pool'
+  - 'depth_map'
+  - 'resnet_v2_50'
+  - 'Fuse'
+  - 'MLPs'
+  - 'Regressor'
+
+  freeze:
+    output_node_name: 'rggnet_3dstn/Forward/Regressor/y_hat_se3param'

@@ -1,0 +1,12 @@
+tensorflow-gpu==1.14
+fire
+pyyaml
+python-box
+tqdm
+pytest
+# opencv==4.2 # You shall install this thru conda
+tensorflow_probability==0.7.0
+geomstats==1.15
+git+https://github.com/utiasSTARS/liegroups
+gast==0.2.2 # tensoreflow bug:https://github.com/tensorflow/tensorflow/issues/32859
+tensorflow-graphics-gpu==1.0.0

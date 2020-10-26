@@ -1,0 +1,79 @@
+name: 'vae'
+
+tensors:
+  placeholders:
+    inputs:
+      x_cam_resized:
+        shape: [160, 640, 3]
+      x_dm_ft_resized:
+        shape: [160, 640, 2]
+
+  hyper_params:
+    vae_latent_dim: 100
+
+train:
+  stop_val_loss_decrease: -0.05
+  epochs: 300
+  val_epoch: 10
+  save_epoch: 10
+  batch_size: 64
+  start_learning_rate: 0.00001
+  lr_decay_step: 2000
+  lr_decay_rate: 0.96
+  pre_trained_weights: []
+  continue_training: False
+  optimizer_var_list: []
+  devices:
+    GPU: 1
+
+machine:
+  save_dir: './save/vae/'
+  log_dir: './log/vae/'
+
+data:
+  num_parallel_reads: 4
+  inputs:
+    # Ensure, this key is the same the model.tensor_dict
+    # Below are to be resized and sliced in pre-process to match the placeholders
+    x_dm_ft_resized:
+      modality: 'image'
+      data_type: 'float32'
+      nhwc: True
+      H: 160
+      W: 640
+      C: 2  # (i, Zcam_normed)
+      # Feature listed below will be random chosen on the fly
+      feature_names:
+        - 'x_dm_ft_resized'
+    x_cam_resized:
+      modality: 'image'
+      data_type: 'float32'
+      nhwc: True
+      H: 160
+      W: 640
+      C: 3  # (R, G, B)  normalized (0, 1)
+      # Feature listed below will be random chosen on the fly
+      feature_names:
+        - 'x_cam_resized'
+
+  # Below are configs for tfrecords files
+  compression_type: '' # no compression
+  suffix: 'tfrecord'
+  tfrecords_train_dirs:
+    - "kitti/tfrecords/train/"
+    - "kitti/tfrecords/train/trans/"
+    - "kitti/tfrecords/train/rot/"
+    # Below is for RGGNet+
+    - "kitti/tfrecords/train/1003/"
+
+  # You shall create your own validation datasets
+  # Below is just for reference
+  tfrecords_test_dirs:
+    - 'kitti/tfrecords/test/T1/'
+    - 'kitti/tfrecords/test/T2a/'
+    - 'kitti/tfrecords/test/T2b/'
+    - 'kitti/tfrecords/test/T3/'
+
+  # This is only for unit-testing - deprecated
+  tfrecords_toy_dirs:
+    - "kitti/tfrecords/toy/"

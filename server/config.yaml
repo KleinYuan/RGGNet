@@ -1,0 +1,52 @@
+#| T1 | 2000 (26_09, 0005/0070) | 52 GB|+/- 15 deg | +/- 0.2 m|
+#| T2a | 2000 (26_09, ex 0005/0070) | 52 GB|+/- 10 deg | +/- 0.2 m|
+#| T2b | 2000 (26_09, 0005/0070) |  52 GB|+/- 10 deg| +/- 0.2 m|
+#| T3 | 2000 (03_10, 0027) |  52 GB|+/- 2 deg| +/- 0.3 m|
+
+#  Below is for 16 line LiDAR with 10 rot and 0.3 trans for T3 testdataset
+env:
+  description: 'an environment reading static_file from file system to pipe into the inference app'
+  fs_mode:
+    force_shape: # due to a different drive
+      H: 375
+      W: 1242
+    reduce_lidar_line_to: 16
+    raw_data_dir: '/root/kitti/raw/test' # Replace this 0070 with whatever drive you would like to test
+    res_data_dir: '/root/kitti/server/results' # Make sure you change this to your fav localtion
+    number: False
+    off_range:
+      rot: 10        # deg
+      trans: 0.2     # m
+    vae_resized:
+      H: 160
+      W: 640
+  server_mode: False
+
+
+app:
+  rggnet:
+    pb_fp: '/root/rggnet/training/prod/rggnet/best.pb'
+    tensors:
+      inputs:
+        - 'rggnet/Placeholders/x_dm:0'
+        - 'rggnet/Placeholders/x_cam:0'
+      outputs:
+        - 'rggnet/Forward/Regressor/y_hat_se3param:0'
+
+  rggnet_novae:
+    pb_fp: '/root/rggnet/training/prod/rggnet_novae/best.pb'
+    tensors:
+      inputs:
+        - 'rggnet_novae/Placeholders/x_dm:0'
+        - 'rggnet_novae/Placeholders/x_cam:0'
+      outputs:
+        - 'rggnet_novae/Forward/Regressor/y_hat_se3param:0'
+
+  rggnet_plus:
+    pb_fp: '/root/rggnet/training/prod/rggnet_plus/best.pb'
+    tensors:
+      inputs:
+        - 'rggnet/Placeholders/x_dm:0'
+        - 'rggnet/Placeholders/x_cam:0'
+      outputs:
+        - 'rggnet/Forward/Regressor/y_hat_se3param:0'
