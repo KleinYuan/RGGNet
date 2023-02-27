@@ -15,8 +15,8 @@ run:
         --hostname="inside-DOCKER" \
         --name="rggnet-experiment" \
         -v ${PWD}:/root/rggnet \
-        -v ${PWD}/kitti:/root/kitti \
-      	rggnet-docker bash
+        -v /home/tienloc47/kitty_dataset:/root/kitti \
+	rggnet-docker bash
 
 test:
 	echo "Running test ..."

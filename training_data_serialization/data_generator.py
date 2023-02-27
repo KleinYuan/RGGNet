@@ -22,7 +22,7 @@ class Generator(object):
     def run(self, config_fp):
         # Load configurations
         print("Loading configurations ...")
-        _config = Box(yaml.load(open(config_fp, 'r').read()))
+        _config = Box(yaml.safe_load(open(config_fp, 'r').read()))
         print("Configs: \n{}".format(_config))
 
         for _dataset_name in _config.keys():

@@ -118,7 +118,7 @@ def get_raw_data_stats(data_fp, datatype='sync'):
         "num_data_stats": {}
     }
     data_fps = {}
-    for root, dirs, files in os.walk(data_fp):
+    for root, dirs, files in os.walk(data_fp, followlinks=True):
         if "velodyne_points" in dirs:
             path = root.split(os.sep)
             if datatype in path[-1]:
@@ -184,6 +184,8 @@ def load_raw_data(data_fp):
     print("Loading raw data from {}.....".format(data_fp))
     all_raw_data = []
     stats, data_fps = get_raw_data_stats(data_fp=data_fp)
+    print('stats: ', stats)
+    print('data_fps: ', data_fps)
     data_drives = data_fps.values()
     transform_mat_fp = None
     transform_mat = None
@@ -218,4 +220,6 @@ def load_raw_data(data_fp):
 
 if __name__ == '__main__':
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    load_raw_data(data_fp='{}/../kitti_raw_data'.format(dir_path))
+    load_path = '{}/../kitti_raw_data'.format(dir_path)
+    print('Loading data from ', load_path)
+    load_raw_data(data_fp=load_path)

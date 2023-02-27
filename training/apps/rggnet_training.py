@@ -13,7 +13,7 @@ def run(config_fp='../config/rggnet.yaml'):
     In most cases, you don't need to modify any lines of this script.
     """
     config_abs_fp = os.path.join(os.path.dirname(__file__), config_fp)
-    config = Box(yaml.load(open(config_abs_fp, 'r').read()))
+    config = Box(yaml.safe_load(open(config_abs_fp, 'r').read()))
     # Config logger
     tf.logging.set_verbosity(tf.logging.INFO)
     logger = tf.logging
