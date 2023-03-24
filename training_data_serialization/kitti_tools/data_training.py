@@ -55,6 +55,43 @@ def random_transform(raw_transform, range_rot_rad, range_trans_m):
     return init_transform, target_transform
 
 
+def generate_dm(pts, tx, l_rect_matrix, l_proj_matrix, r_rect_matrix, r_proj_matrix, img_size, rot_range, trans_range):
+    H, W = img_size
+    init_tx, target_tx = random_transform(tx, rot_range, trans_range)
+    l_x_dm = generate_depth_map(
+        pts_3d_in=pts,
+        transform_rm_3by4=init_tx,
+        R_rect=l_rect_matrix,
+        P_rect=l_proj_matrix,
+        H=H,
+        W=W)
+
+    l_y_dm = update_depth_map(
+        depth_map=l_x_dm,
+        transform_rm_3by4=target_tx,
+        R_rect=l_rect_matrix,
+        P_rect=l_proj_matrix,
+        H=H,
+        W=W)
+
+    r_x_dm = generate_depth_map(
+        pts_3d_in=pts,
+        transform_rm_3by4=init_tx,
+        R_rect=r_rect_matrix,
+        P_rect=r_proj_matrix,
+        H=H,
+        W=W)
+
+    r_y_dm = update_depth_map(
+        depth_map=r_x_dm,
+        transform_rm_3by4=target_tx,
+        R_rect=r_rect_matrix,
+        P_rect=r_proj_matrix,
+        H=H,
+        W=W)
+
+    return l_x_dm, l_y_dm, r_x_dm, r_y_dm, target_tx
+
 def generate_single_example(raw_data, range_rot_deg, range_trans_m, vae_resized_H, vae_resized_W, force_shape=None, reduce_lidar_line_to=None):
     """
     raw_data: RawData Obj
@@ -84,38 +121,56 @@ def generate_single_example(raw_data, range_rot_deg, range_trans_m, vae_resized_
 
     # Assign whatever available
     training_data.x_cam = training_data.rgb_data
+    training_data.r_x_cam = training_data.r_rgb_data
     # TODO: This could not be the best idea --> Only happened to cam with slightly (1 pixel) different examples
     if force_shape is not None:
         training_data.x_cam = cv2.resize(training_data.x_cam, (force_shape[1], force_shape[0]), interpolation=cv2.INTER_LINEAR)
 
     training_data.x_R_rects = training_data.raw_data.cam_mat_R
     training_data.x_P_rects = training_data.raw_data.cam_mat_P
+    training_data.r_x_R_rects = training_data.raw_data.r_cam_mat_R
+    training_data.r_x_P_rects = training_data.raw_data.r_cam_mat_P
     training_data.x_cam_resized = cv2.resize(training_data.rgb_data, (vae_resized_W, vae_resized_H), interpolation=cv2.INTER_LINEAR)
 
     # Compute x_dm, y_dm, x_dm_ft_resized, y_se3param
-    H, W = training_data.x_cam.shape[:2]
+    # H, W = training_data.x_cam.shape[:2]
+    # _init_transform_rm_3by4, _target_transform_rm_3by4 = random_transform(training_data.raw_data.transform_mat, range_rot_rad, range_trans_m)
 
-    _init_transform_rm_3by4, _target_transform_rm_3by4 = random_transform(training_data.raw_data.transform_mat, range_rot_rad, range_trans_m)
+    # training_data.x_dm = generate_depth_map(
+    #         pts_3d_in=training_data.pts_data,
+    #         transform_rm_3by4=_init_transform_rm_3by4,
+    #         R_rect=training_data.x_R_rects,
+    #         P_rect=training_data.x_P_rects,
+    #         H=H,
+    #         W=W)
 
-    training_data.x_dm = generate_depth_map(
-            pts_3d_in=training_data.pts_data,
-            transform_rm_3by4=_init_transform_rm_3by4,
-            R_rect=training_data.x_R_rects,
-            P_rect=training_data.x_P_rects,
-            H=H,
-            W=W)
+    # training_data.y_dm = update_depth_map(
+    #     depth_map=training_data.x_dm,
+    #     transform_rm_3by4=_target_transform_rm_3by4,
+    #     R_rect=training_data.x_R_rects,
+    #     P_rect=training_data.x_P_rects,
+    #     H=H,
+    #     W=W)
 
-    training_data.y_dm = update_depth_map(
-        depth_map=training_data.x_dm,
-        transform_rm_3by4=_target_transform_rm_3by4,
-        R_rect=training_data.x_R_rects,
-        P_rect=training_data.x_P_rects,
-        H=H,
-        W=W)
+    img_size = training_data.x_cam.shape[:2]
+    l_x_dm, l_y_dm, r_x_dm, r_y_dm, target_tx = generate_dm(
+        training_data.pts_data,
+        training_data.raw_data.transform_mat,
+        training_data.x_R_rects,
+        training_data.x_P_rects,
+        training_data.r_x_R_rects,
+        training_data.r_x_P_rects,
+        img_size,
+        range_rot_rad,
+        range_trans_m
+    )
+    training_data.x_dm, training_data.y_dm = l_x_dm, l_y_dm
+    training_data.r_x_dm, training_data.r_y_dm = r_x_dm, r_y_dm
 
     training_data.x_dm_ft_resized = cv2.resize(training_data.y_dm[:, :, 3:5], (vae_resized_W, vae_resized_H), interpolation=cv2.INTER_LINEAR)
 
-    _target_SE3 = np.concatenate([_target_transform_rm_3by4, np.reshape(np.array([0. , 0., 0., 1.]), newshape=(1, 4))], 0).astype(np.float32)
+    # _target_SE3 = np.concatenate([_target_transform_rm_3by4, np.reshape(np.array([0. , 0., 0., 1.]), newshape=(1, 4))], 0).astype(np.float32)
+    _target_SE3 = np.concatenate([target_tx, np.reshape(np.array([0. , 0., 0., 1.]), newshape=(1, 4))], 0).astype(np.float32)
     training_data.y_se3param = SE3_to_se3(SE3_matrix=_target_SE3).astype(np.float32)
 
     return training_data

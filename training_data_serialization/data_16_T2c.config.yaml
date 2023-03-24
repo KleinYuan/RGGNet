@@ -1,0 +1,27 @@
+#The training data serialization process is totally configurable.
+#To create your own training data, just adding a similar block with the template
+#training_data:
+#  number: ${number}
+#  reduce_lidar_line_to: ${lidar_number}       # Shall be 8, 16, 32, 64
+#  raw_data_dir: '/root/kitti/raw/train'             # Replace with your own path
+#  output_data_dir: '/root/kitti/tfrecords_16/train' # Replace with your own path
+#  vae_resized:
+#    H: 160
+#    W: 640
+#  off_range:
+#    rot: ${rot_range}        # deg
+#    trans: ${trans_range}    # m
+
+# (09/26/2011 0005/0007)
+T2c:
+  number: 2000
+  reduce_lidar_line_to: 16
+  output_format: 'tfrecords'
+  raw_data_dir: '/mnt/disks/kitti-dataset/test'
+  output_data_dir: '/mnt/disks/kitti-train/tfrecords_16/test/T2c'
+  vae_resized:
+    H: 160
+    W: 640
+  off_range:
+    rot: 20        # deg
+    trans: 0.2     # m

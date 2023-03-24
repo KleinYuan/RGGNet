@@ -84,7 +84,7 @@ class Generator(object):
             if not os.path.isdir(output_fp):
                 print("{} does not exits, creating one.".format(output_fp))
                 pathlib.Path(output_fp).mkdir(parents=True, exist_ok=True)
-            writer = tf.python_io.TFRecordWriter("{}/{}.tfrecord".format(output_fp, _chunk_idx))
+            writer = tf.io.TFRecordWriter("{}/{}.tfrecord".format(output_fp, _chunk_idx))
             for _idx, _one_raw_data in enumerate(_training_raw_data_chunk):
                 _training_data = generate_single_example(_one_raw_data, off_range_rot, off_range_trans, vae_resized_H,
                                                          vae_resized_W, force_shape, reduce_lidar_line_to=reduce_lidar_line_to)
@@ -92,10 +92,15 @@ class Generator(object):
                 example_dict = {}
                 example_dict.update({
                     'x_dm': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.x_dm.flatten().astype(np.float32))),
+                    'r_x_dm': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.r_x_dm.flatten().astype(np.float32))),
                     'x_cam': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.x_cam.flatten().astype(np.float32))),
+                    'r_x_cam': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.r_x_cam.flatten().astype(np.float32))),
                     'x_R_rects': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.x_R_rects.flatten().astype(np.float32))),
                     'x_P_rects': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.x_P_rects.flatten().astype(np.float32))),
+                    'r_x_R_rects': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.r_x_R_rects.flatten().astype(np.float32))),
+                    'r_x_P_rects': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.r_x_P_rects.flatten().astype(np.float32))),
                     'y_dm': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.y_dm.flatten().astype(np.float32))),
+                    'r_y_dm': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.r_y_dm.flatten().astype(np.float32))),
                     'y_se3param': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.y_se3param.flatten().astype(np.float32))),
                     'x_cam_resized': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.x_cam_resized.flatten().astype(np.float32))),
                     'x_dm_ft_resized': tf.train.Feature(float_list=tf.train.FloatList(value=_training_data.x_dm_ft_resized.flatten().astype(np.float32))),

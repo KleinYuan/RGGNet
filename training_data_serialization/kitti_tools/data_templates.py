@@ -29,6 +29,12 @@ class RawData(object):
         self.cam_mat_R = None
         self.id = None
 
+        # For stereo.
+        self.r_rgb_fp = None
+        self.r_cam_mat_P = None
+        self.r_cam_mat_R = None
+        self.r_rgb_data = None
+
         # Below data could be loaded in run-time by calling load function to save resources
         self.pts_data = None
         self.rgb_data = None
@@ -36,14 +42,19 @@ class RawData(object):
     def load(self):
         self.pts_data = np.fromfile(self.pts_fp, dtype=np.float32).reshape((-1, 4))[:, :4]
         self.rgb_data = cv2.imread(self.rgb_fp)
+        self.r_rgb_data = cv2.imread(self.r_rgb_fp)
 
     def inspect(self):
         print("-----------------------------Inspecting---------------------------")
         print("self.pts_fp: {}".format(self.pts_fp))
         print("self.rgb_fp: {}".format(self.rgb_fp))
+        print("self.r_rgb_fp: {}".format(self.r_rgb_fp))
         print("[Shape = {}]     self.transform_mat: {}".format(self.transform_mat.shape, self.transform_mat))
         print("[Shape = {}]     self.cam_mat_P: {}".format(self.cam_mat_P.shape, self.cam_mat_P))
         print("[Shape = {}]     self.cam_mat_R: {}".format(self.cam_mat_R.shape, self.cam_mat_R))
+        print("****************************************** Right Camera **********")
+        print("[Shape = {}]     self.cam_mat_P: {}".format(self.r_cam_mat_P.shape, self.r_cam_mat_P))
+        print("[Shape = {}]     self.cam_mat_R: {}".format(self.r_cam_mat_R.shape, self.r_cam_mat_R))
         print("------------------------------------------------------------------")
 
 
@@ -55,6 +66,7 @@ class TrainingData(object):
         self.raw_data.load()
         self.pts_data = self.raw_data.pts_data
         self.rgb_data = self.raw_data.rgb_data
+        self.r_rgb_data = self.raw_data.r_rgb_data
         self._set_Xs()
         self._set_Ys()
 
@@ -69,9 +81,16 @@ class TrainingData(object):
         self.x_R_rects = None
         self.x_P_rects = None
 
+        # For right camera
+        self.r_x_dm = None
+        self.r_x_cam = None
+        self.r_x_R_rects = None
+        self.r_x_P_rects = None
+
     def _set_Ys(self):
         self.y_se3param = None
         self.y_dm = None
+        self.r_y_dm = None
 
     def inspect(self):
         print("-----------------------------Inspecting---------------------------")

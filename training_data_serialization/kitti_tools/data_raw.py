@@ -118,6 +118,7 @@ def get_raw_data_stats(data_fp, datatype='sync'):
         "num_data_stats": {}
     }
     data_fps = {}
+    print('walking through ', data_fp)
     for root, dirs, files in os.walk(data_fp, followlinks=True):
         if "velodyne_points" in dirs:
             path = root.split(os.sep)
@@ -168,9 +169,17 @@ def load_cam_calibrations(data_fp):
     data = parse_from_kitti_txt(data_fp=data_fp)
     P_rect_02 = data['P_rect_02']
     R_rect_02 = data['R_rect_02']
+
+    P_rect_03 = data['P_rect_03']
+    R_rect_03 = data['R_rect_03']
+
     R_rect = np.reshape(R_rect_02, [3, 3])
     P_rect = np.reshape(P_rect_02, [3, 4])
-    return P_rect, R_rect
+
+    r_R_rect = np.reshape(R_rect_03, [3, 3])
+    r_P_rect = np.reshape(P_rect_03, [3, 4])
+
+    return P_rect, R_rect, r_P_rect, r_R_rect
 
 
 def load_raw_data(data_fp):
@@ -196,6 +205,7 @@ def load_raw_data(data_fp):
             raw_data = RawData()
             raw_data.pts_fp = '{}/velodyne_points/data/{}.bin'.format(_abs_path, _data_id)
             raw_data.rgb_fp = '{}/image_02/data/{}.png'.format(_abs_path, _data_id)
+            raw_data.r_rgb_fp = '{}/image_03/data/{}.png'.format(_abs_path, _data_id)
             _transform_mat_fp = '{}/../calib_velo_to_cam.txt'.format(_abs_path)
             _cam_mat_fp = '{}/../calib_cam_to_cam.txt'.format(_abs_path)
 
@@ -210,7 +220,7 @@ def load_raw_data(data_fp):
             # print _data_id
             raw_data.id = _data_id
             raw_data.transform_mat = transform_mat
-            raw_data.cam_mat_P, raw_data.cam_mat_R = load_cam_calibrations(_cam_mat_fp)
+            raw_data.cam_mat_P, raw_data.cam_mat_R, raw_data.r_cam_mat_P, raw_data.r_cam_mat_R = load_cam_calibrations(_cam_mat_fp)
             all_raw_data.append(raw_data)
     print("{} raw data has been loaded!".format(len(all_raw_data)))
     print("Example data look like below:")

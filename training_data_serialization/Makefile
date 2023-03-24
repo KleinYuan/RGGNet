@@ -6,3 +6,12 @@ create-data-64:
 create-data-16:
 	export CUDA_VISIBLE_DEVICES= && export PYTHONPATH='.' && python data_generator.py run \
 	--config_fp data_16.config.yaml
+
+create-stereo-data-16:
+	export CUDA_VISIBLE_DEVICES= && export PYTHONPATH='.' && python data_generator.py run \
+	--config_fp data_16_train_2400.config.yaml
+
+create-test-stereo-data-16:
+	export CUDA_VISIBLE_DEVICES= && export PYTHONPATH='.' && python data_generator.py run \
+	--config_fp data_16_test.config.yaml
+
