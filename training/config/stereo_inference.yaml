@@ -25,6 +25,26 @@ common_data_io: &defaults
         # Feature listed below will be random chosen on the fly
         feature_names:
           - 'x_cam'
+      r_x_dm:
+        modality: 'image'
+        data_type: 'float32'
+        nhwc: True
+        H: 375
+        W: 1242
+        C: 5 # (X, Y, Z, i, Zcam_normed)
+        # Feature listed below will be random chosen on the fly
+        feature_names:
+          - 'r_x_dm'
+      r_x_cam:
+        modality: 'image'
+        data_type: 'float32'
+        nhwc: True
+        H: 375
+        W: 1242
+        C: 3   # (R, G, B)   (0, 255.)
+        # Feature listed below will be random chosen on the fly
+        feature_names:
+          - 'r_x_cam'
 
       x_R_rects:
         modality: 'matrix'
@@ -67,49 +87,18 @@ common_data_io: &defaults
     tfrecords_test_dirs:
       - "/root/kitti-raw/test_stereo/T1"
 
-
-rggnet:
+stereo_rggnet_novae:
   <<: *defaults
-  pb_fp: 'prod_64/rggnet/eps1.pb'
+  pb_fp: 'prod/stereo_rggnet_novae_50/best.pb'
   tensors:
     inputs:
-    - 'rggnet/Placeholders/x_dm:0'
-    - 'rggnet/Placeholders/x_cam:0'
+    - 'stereorggnet_novae/Placeholders/x_dm:0'
+    - 'stereorggnet_novae/Placeholders/x_cam:0'
+    - 'stereorggnet_novae/Placeholders/r_x_dm:0'
+    - 'stereorggnet_novae/Placeholders/r_x_cam:0'
     outputs:
-    - 'rggnet/Forward/Regressor/y_hat_se3param:0'
-
-rggnet_3dstn:
-  <<: *defaults
-  pb_fp: 'prod/rggnet_3dstn/best.pb'
-  tensors:
-    inputs:
-    - 'rggnet_3dstn/Placeholders/x_dm:0'
-    - 'rggnet_3dstn/Placeholders/x_cam:0'
-    outputs:
-    - 'rggnet_3dstn/Forward/Regressor/y_hat_se3param:0'
-
-rggnet_novae:
-  <<: *defaults
-  pb_fp: 'prod/rggnet_novae_50/best.pb'
-  tensors:
-    inputs:
-    - 'rggnet_novae/Placeholders/x_dm:0'
-    - 'rggnet_novae/Placeholders/x_cam:0'
-    outputs:
-    - 'rggnet_novae/Forward/Regressor/y_hat_se3param:0'
+    - 'stereorggnet_novae/y_hat_se3param:0'
     compression_type: '' # no compression
     suffix: 'tfrecord'
-    # tfrecords_test_dirs:
-      # - "/root/kitti-raw/test_stereo/T1"
-      # - "/root/kitti-raw/tfrecords_16/test/T1"
-
-
-rggnet_plus:
-  <<: *defaults
-  pb_fp: 'training/prod/rggnet_plus/best.pb'
-  tensors:
-    inputs:
-    - 'rggnet/Placeholders/x_dm:0'
-    - 'rggnet/Placeholders/x_cam:0'
-    outputs:
-    - 'rggnet/Forward/Regressor/y_hat_se3param:0'
+    tfrecords_test_dirs:
+      - "/root/kitti-raw/test_stereo/T1"

@@ -107,6 +107,8 @@ class BaseTrainer(object):
 
         # Then, construct feed_dict include all features from tfrecords
         for _idx, _feature in enumerate(_feature_ls):
+            # print('key: ', _feature)
+            # print('tensor_dict:', tensor_dict)
             assert _feature in tensor_dict, "tensor_dict does not include the key"
             feed_dict[tensor_dict[_feature]] = _batch_ls[_idx]
 
@@ -225,7 +227,7 @@ class BaseTrainer(object):
 
     def train(self, data_generator, restore_graph_fns):
 
-        self.logger.info('Opening a session and training started ...')
+        self.logger.info('Opening a session and training started ...', restore_graph_fns)
 
         with tf.Session(graph=self.compute_model.graph, config=self._get_tf_config()) as self.session:
             self.in_progress = True

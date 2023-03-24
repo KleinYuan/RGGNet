@@ -1,11 +1,15 @@
-name: 'rggnet_novae'
+name: 'stereorggnet_novae'
 
 tensors:
   placeholders:
     inputs:
       x_dm:
         shape: [375, 1242, 5]
+      r_x_dm:
+        shape: [375, 1242, 5]
       x_cam:
+        shape: [375, 1242, 3]
+      r_x_cam:
         shape: [375, 1242, 3]
       x_R_rects:
         shape: [3, 3]
@@ -41,8 +45,8 @@ train:
     GPU: 1
 
 machine:
-  save_dir: './save/rggnet_novae_50/'
-  log_dir: './log/rggnet_novae_50/'
+  save_dir: './save/stereorggnet_novae/'
+  log_dir: './log/stereorggnet_novae/'
 
 
 data:
@@ -59,6 +63,18 @@ data:
       # Feature listed below will be random chosen on the fly
       feature_names:
         - 'x_dm'
+
+    r_x_dm:
+      modality: 'image'
+      data_type: 'float32'
+      nhwc: True
+      H: 375
+      W: 1242
+      C: 5 # (X, Y, Z, i, Zcam_normed)
+      # Feature listed below will be random chosen on the fly
+      feature_names:
+        - 'r_x_dm'
+
     x_cam:
       modality: 'image'
       data_type: 'float32'
@@ -69,6 +85,17 @@ data:
       # Feature listed below will be random chosen on the fly
       feature_names:
         - 'x_cam'
+
+    r_x_cam:
+      modality: 'image'
+      data_type: 'float32'
+      nhwc: True
+      H: 375
+      W: 1242
+      C: 3   # (R, G, B)  (0, 255.)
+      # Feature listed below will be random chosen on the fly
+      feature_names:
+        - 'r_x_cam'
 
     x_R_rects:
       modality: 'matrix'
@@ -109,9 +136,9 @@ data:
   compression_type: '' # no compression
   suffix: 'tfrecord'
   tfrecords_train_dirs:
-    - "/root/kitti-train/"
-    - "/root/kitti-train/trans/"
-    - "/root/kitti-train/rot/"
+    - "/root/kitti-raw/train_stereo/"
+    - "/root/kitti-raw/train_stereo/trans/"
+    - "/root/kitti-raw/train_stereo/rot/"
     # Below is for RGGNet+
     # - "kitti/tfrecords/train/1003/"
 
@@ -133,12 +160,17 @@ data:
 
 inference:
   included_tensor_names:
-  - 'Pre_Process_Pool'
-  - 'depth_map'
-  - 'resnet_v2_50'
-  - 'Fuse'
-  - 'MLPs'
+  - 'left_Pre_Process_Pool'
+  - 'right_Pre_Process_Pool'
+  - 'left_cam'
+  - 'left_dm'
+  - 'right_cam'
+  - 'right_dm'
+  - 'left_Fuse'
+  - 'right_Fuse'
+  - 'left_MLPs'
+  - 'right_MLPs'
   - 'Regressor'
 
   freeze:
-    output_node_name: 'rggnet_novae/Forward/Regressor/y_hat_se3param'
+    output_node_name: 'stereorggnet_novae/y_hat_se3param'

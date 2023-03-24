@@ -1,0 +1,1381 @@
+tienloc47@tf-instance:~/RGGNet$ ls
+Dockerfile        commander.py                   my-novae-results  resnet_v2_50_2017_04_14  training
+MACHINE-SETUP.md  initial_report.tgz             prod              save                     training_data_serialization
+Makefile          install_dependencies.sh        report            server                   trial_train.log
+README.md         install_dependencies_conda.sh  report_novae      setup.py
+assets            log                            requirements.txt  stereo_training.log
+tienloc47@tf-instance:~/RGGNet$ ls save/
+rggnet_novae  stereorggnet_novae
+tienloc47@tf-instance:~/RGGNet$ rm -rf save/rggnet_novae/
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_1_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_7_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_4_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_8_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_1_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_4_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_3_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_2_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_3_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_9_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_7_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_1_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_8_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_5_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_4_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/best.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_6_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_2_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_0_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/best.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/checkpoint': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_0_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_9_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_5_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_5_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_9_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_2_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_3_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_7_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/best.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_0_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_6_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_8_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677892668.6002219/eps_6_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_28_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_1_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_7_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_4_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_8_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_1_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_21_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_32_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_23_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_30_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_28_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_4_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_26_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_11_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_3_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_2_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_3_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_13_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_30_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_9_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_24_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_7_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_15_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_31_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_10_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_21_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_1_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_16_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_17_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_32_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_12_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_8_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_23_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_5_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_22_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_27_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_16_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_24_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_12_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_11_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_19_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_26_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_14_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_21_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_4_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_25_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_22_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_15_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/best.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_6_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_2_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_29_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_19_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_31_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_33_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_0_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_34_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_14_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/best.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_13_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/checkpoint': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_24_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_0_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_33_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_9_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_18_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_33_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_16_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_5_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_5_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_9_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_2_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_17_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_22_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_14_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_12_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_23_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_29_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_15_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_18_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_30_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_18_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_11_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_26_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_32_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_3_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_13_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_25_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_17_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_25_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_28_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_7_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/best.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_20_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_0_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_10_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_6_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_10_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_34_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_8_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_31_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_27_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_20_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_20_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_19_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_29_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_6_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677868987.9682899/eps_27_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_1_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_1_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_3_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_2_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_3_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_1_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/best.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_2_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_0_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/best.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/checkpoint': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_0_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_2_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/best.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678845403.0268254/eps_0_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677869335.9535668/eps_0_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677869335.9535668/checkpoint': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677869335.9535668/eps_0_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677869335.9535668/eps_0_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1678774821.2397463': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_1_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_7_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_4_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_8_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_1_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_4_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_3_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_2_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_3_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_9_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_7_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_1_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_8_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_5_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_4_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/best.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_6_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_2_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_0_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/best.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/checkpoint': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_0_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_9_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_5_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_5_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_9_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_2_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_3_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_7_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/best.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_0_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_6_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_8_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677875479.2559948/eps_6_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677872039.5118413/eps_0_.meta': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677872039.5118413/checkpoint': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677872039.5118413/eps_0_.index': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677872039.5118413/eps_0_.data-00000-of-00001': Permission denied
+rm: cannot remove 'save/rggnet_novae/1677825183.292004': Permission denied
+tienloc47@tf-instance:~/RGGNet$ sudo rm -rf save/rggnet_novae/
+tienloc47@tf-instance:~/RGGNet$ ls -la
+total 352
+drwxr-xr-x 14 tienloc47 tienloc47   4096 Mar 15 07:05 .
+drwxr-xr-x 16 tienloc47 tienloc47   4096 Mar  4 23:51 ..
+drwxr-xr-x  8 tienloc47 tienloc47   4096 Mar 14 06:19 .git
+-rw-r--r--  1 tienloc47 tienloc47     52 Mar  1 04:37 .gitignore
+-rw-r--r--  1 tienloc47 tienloc47   2074 Mar  1 04:37 Dockerfile
+-rw-r--r--  1 tienloc47 tienloc47   2331 Mar  1 04:37 MACHINE-SETUP.md
+-rw-r--r--  1 tienloc47 tienloc47   1927 Mar 14 05:10 Makefile
+-rw-r--r--  1 tienloc47 tienloc47   8572 Mar  1 04:37 README.md
+drwxr-xr-x  2 tienloc47 tienloc47   4096 Mar  1 04:37 assets
+-rw-r--r--  1 tienloc47 tienloc47   1208 Mar  1 04:37 commander.py
+-rw-r--r--  1 root      root      120969 Mar  3 06:25 initial_report.tgz
+-rw-r--r--  1 tienloc47 tienloc47    225 Mar  1 05:17 install_dependencies.sh
+-rwxr-xr-x  1 tienloc47 tienloc47    258 Mar  1 04:37 install_dependencies_conda.sh
+drwxr-xr-x  4 root      root        4096 Mar 14 05:14 log
+drwxr-xr-x  3 tienloc47 tienloc47   4096 Mar  4 01:02 my-novae-results
+drwxr-xr-x  3 root      root        4096 Mar  3 22:22 prod
+drwxr-xr-x  2 root      root        4096 Mar  1 06:19 report
+drwxr-xr-x  2 root      root        4096 Mar  3 22:27 report_novae
+-rw-r--r--  1 tienloc47 tienloc47    344 Mar  1 05:59 requirements.txt
+drwxr-xr-x  2 tienloc47 tienloc47   4096 Mar  3 06:31 resnet_v2_50_2017_04_14
+drwxr-xr-x  3 root      root        4096 Mar 17 21:14 save
+drwxr-xr-x  5 tienloc47 tienloc47   4096 Mar  4 00:45 server
+-rw-r--r--  1 tienloc47 tienloc47    403 Mar  1 04:37 setup.py
+-rw-r--r--  1 root      root       74186 Mar 15 14:28 stereo_training.log
+drwxr-xr-x 10 tienloc47 tienloc47   4096 Mar 14 05:13 training
+drwxr-xr-x  3 tienloc47 tienloc47   4096 Mar  1 04:37 training_data_serialization
+-rw-r--r--  1 root      root       50088 Mar 15 06:52 trial_train.log
+tienloc47@tf-instance:~/RGGNet$ make run
+docker run -it \
+        --runtime=nvidia \
+        --net=host \
+        --privileged=true \
+        --ipc=host \
+        --volume="/tmp/.X11-unix:/tmp/.X11-unix:ro" \
+        --env="DISPLAY" \
+        --env="QT_X11_NO_MITSHM=1" \
+        --hostname="inside-DOCKER" \
+        --name="rggnet-experiment" \
+        -v /home/tienloc47/RGGNet:/root/rggnet \
+-v /mnt/disks/kitti/train_stereo:/root/kitti-train \
+-v /mnt/disks/kitti:/root/kitti-raw \
+rggnet-docker bash
+root@inside-DOCKER:~/rggnet# cat Makefile
+clean:
+        docker rm -f $$(docker ps -qa)
+build:
+        docker build -t rggnet-docker .
+
+run:
+        docker run -it \
+        --runtime=nvidia \
+        --net=host \
+        --privileged=true \
+        --ipc=host \
+        --volume="/tmp/.X11-unix:/tmp/.X11-unix:ro" \
+        --env="DISPLAY" \
+        --env="QT_X11_NO_MITSHM=1" \
+        --hostname="inside-DOCKER" \
+        --name="rggnet-experiment" \
+        -v ${PWD}:/root/rggnet \
+        -v /mnt/disks/kitti/train_stereo:/root/kitti-train \
+        -v /mnt/disks/kitti:/root/kitti-raw \
+        rggnet-docker bash
+
+test:
+        echo "Running test ..."
+        export CUDA_VISIBLE_DEVICES=0 && pytest training/tests/
+
+test-tfrecords:
+        export CUDA_VISIBLE_DEVICES=0 && python -m training.tests.test_tfrecords
+
+# Below are new commands
+awesome-train-vae:
+        python commander.py train \
+        --model_name "vae"  \
+        --gpu 0 \
+        --clean_up False
+
+awesome-train-rggnet:
+        python commander.py train \
+        --model_name "rggnet"  \
+        --gpu 0 \
+        --clean_up False
+
+awesome-train-rggnet-novae:
+        python commander.py train \
+        --model_name "rggnet_novae"  \
+        --gpu 0 \
+        --clean_up False
+
+awesome-train-stereorggnet-novae:
+        python commander.py train \
+        --model_name "stereorggnet_novae"  \
+        --gpu 0 \
+        --clean_up False
+
+
+awesome-train-rggnet-3dstn:
+        python commander.py train \
+        --model_name "rggnet_3dstn"  \
+        --gpu 1 \
+        --clean_up False
+
+export-novae-model:
+        export CUDA_VISIBLE_DEVICES= && python -m training.apps.production process \
+        --config_fp ../config/rggnet_novae.yaml \
+        --from_dir save/rggnet_novae/1677875479.2559948 \
+        --to_dir prod/rggnet_novae/ \
+        --to_name best
+
+eval-rggnet:
+        export CUDA_VISIBLE_DEVICES=0 && python -m training.apps.evaluator process \
+        --config_fp ../config/inference.yaml \
+        --model_name rggnet_plus \
+        --res_fp report
+
+eval-rggnet-novae:
+        export CUDA_VISIBLE_DEVICES=0 && python -m training.apps.evaluator process \
+        --config_fp ../config/inference.yaml \
+        --model_name rggnet_novae \
+        --res_fp report_novae
+root@inside-DOCKER:~/rggnet# less Makefile
+bash: less: command not found
+root@inside-DOCKER:~/rggnet# make awesome-train-rggnet-novae
+python commander.py train \
+--model_name "rggnet_novae"  \
+--gpu 0 \
+--clean_up False
+Creating starter according to model name ....
+Starter created!
+Commands: export CUDA_VISIBLE_DEVICES=0 & python -m training.train_start_rggnet_novae
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:5: The name tf.logging.set_verbosity is deprecated. Please u
+se tf.compat.v1.logging.set_verbosity instead.
+
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:5: The name tf.logging.ERROR is deprecated. Please use tf.co
+mpat.v1.logging.ERROR instead.
+
+Using tensorflow backend
+WARNING:tensorflow:From /root/rggnet/training/core/base_model.py:188: The name tf.logging.info is deprecated. Please use tf.compat.v1.l
+ogging.info instead.
+
+INFO:tensorflow:[BaseCompute] Constructing graph now...
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:17: The name tf.variable_scope is deprecated. Please use tf.
+compat.v1.variable_scope instead.
+
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:18: The name tf.placeholder is deprecated. Please use tf.com
+pat.v1.placeholder instead.
+
+Forward ===============================================Start
+WARNING:tensorflow:From /root/rggnet/training/utils/tf_rggnet.py:10: The name tf.nn.avg_pool is deprecated. Please use tf.nn.avg_pool2d
+ instead.
+
+    [Pre_Process_Pool] Tensor("rggnet_novae/x_dm_ft:0", shape=(?, 375, 1242, 2), dtype=float32) --> Tensor("rggnet_novae/Pre_Process_Po
+ol/AvgPool:0", shape=(?, 187, 621, 2), dtype=float32)
+    [Pre_Process_Pool] Tensor("rggnet_novae/pre_process/cond/Merge:0", shape=(?, 375, 1242, 3), dtype=float32) --> Tensor("rggnet_novae
+/Pre_Process_Pool/AvgPool_1:0", shape=(?, 187, 621, 3), dtype=float32)
+    [Feature DM ]:                              Tensor("rggnet_novae/Forward/Feature_Extraction/depth_map/pool5:0", shape=(?, 1, 1, 204
+8), dtype=float32)
+    [Feature CAM]:                              Tensor("rggnet_novae/Forward/Feature_Extraction/resnet_v2_50/pool5:0", shape=(?, 1, 1,
+2048), dtype=float32)
+    [Feature Concat]:                            Tensor("rggnet_novae/Forward/Feature_Extraction/resnet_v2_50/pool5:0", shape=(?, 1, 1,
+ 2048), dtype=float32)
+WARNING:tensorflow:From /root/rggnet/training/utils/tf_rggnet.py:26: flatten (from tensorflow.python.layers.core) is deprecated and wil
+l be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+    [Flattened ]:                             Tensor("rggnet_novae/Forward/Fuse/flatten/Reshape:0", shape=(?, 4096), dtype=float32)
+WARNING:tensorflow:From /root/rggnet/training/utils/tf_rggnet.py:29: dense (from tensorflow.python.layers.core) is deprecated and will
+be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow/python/ops/init_ops.py:1251: calling VarianceScaling.__init__
+ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /root/rggnet/training/utils/tf_rggnet.py:30: dropout (from tensorflow.python.layers.core) is deprecated and wil
+l be removed in a future version.
+Instructions for updating:
+Use keras.layers.dropout instead.
+    [MLPs ]:                              Tensor("rggnet_novae/Forward/MLPs/dropout_2/cond/Merge:0", shape=(?, 512), dtype=float32)
+    [y_hat_se3param]:                              Tensor("rggnet_novae/Forward/Regressor/y_hat_se3param:0", shape=(?, 6), dtype=float3
+2)
+Forward ===============================================End
+Loss ===============================================Start
+    [SE3 Loss]           ##################################
+    [y_hat_se3param]           Tensor("rggnet_novae/Forward/Regressor/y_hat_se3param:0", shape=(?, 6), dtype=float32)
+    [y_se3param    ]           Tensor("rggnet_novae/Placeholders/y_se3param:0", shape=(?, 6), dtype=float32)
+    [se3_pred     ]           Tensor("Loss/SE3_Loss/Reshape:0", shape=(4, 6), dtype=float32)
+    [se3_true     ]           Tensor("Loss/SE3_Loss/Reshape_1:0", shape=(4, 6), dtype=float32)
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/geomstats/backend/tensorflow.py:267: The name tf.trace is deprecated. Pl
+ease use tf.linalg.trace instead.
+
+[BaseCompute] Define restore graph fns ...
+Pretrained-Weights:  [{'load': True, 'model_dir': './resnet_v2_50_2017_04_14/resnet_v2_50.ckpt', 'excluded_tensor_names': [], 'included
+_tensor_names': []}]
+INFO:tensorflow:[Restoring weights] Setting ......
+INFO:tensorflow:[Restoring weights] From ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+@#@#$@#$@#$@#$ !!!!!!! model:  ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+var:  {}
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/root/rggnet/training/train_start_rggnet_novae.py", line 7, in <module>
+    training_app.run(os.path.join('../config', config_file))
+  File "/root/rggnet/training/apps/rggnet_novae_training.py", line 21, in run
+    compute_model = Model(config=config, logger=logger)
+  File "/root/rggnet/training/core/base_model.py", line 99, in __init__
+    self.define_graph()
+  File "/root/rggnet/training/core/base_model.py", line 198, in define_graph
+    self.define_restore_graph_fns()
+  File "/root/rggnet/training/core/base_model.py", line 177, in define_restore_graph_fns
+    included_tensor_names=_included_tensor_names)
+  File "/root/rggnet/training/core/base_model.py", line 147, in get_restore_weights_fn
+    ignore_missing_vars=True)
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/contrib/framework/python/ops/variables.py", line 744, in assign_from_checkpoi
+nt_fn
+    raise ValueError('var_list cannot be empty')
+ValueError: var_list cannot be empty
+root@inside-DOCKER:~/rggnet# make awesome-train-rggnet-novae
+python commander.py train \
+--model_name "rggnet_novae"  \
+--gpu 0 \
+--clean_up False
+Creating starter according to model name ....
+Starter created!
+Commands: export CUDA_VISIBLE_DEVICES=0 & python -m training.train_start_rggnet_novae
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a syno
+nym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/usr/local/lib/python3.7/dist-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as
+ a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:5: The name tf.logging.set_verbosity is deprecated. Please u
+se tf.compat.v1.logging.set_verbosity instead.
+
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:5: The name tf.logging.ERROR is deprecated. Please use tf.co
+mpat.v1.logging.ERROR instead.
+
+Using tensorflow backend
+WARNING:tensorflow:From /root/rggnet/training/core/base_model.py:190: The name tf.logging.info is deprecated. Please use tf.compat.v1.l
+ogging.info instead.
+
+INFO:tensorflow:[BaseCompute] Constructing graph now...
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:17: The name tf.variable_scope is deprecated. Please use tf.
+compat.v1.variable_scope instead.
+
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:18: The name tf.placeholder is deprecated. Please use tf.com
+pat.v1.placeholder instead.
+
+Forward ===============================================Start
+WARNING:tensorflow:From /root/rggnet/training/utils/tf_rggnet.py:10: The name tf.nn.avg_pool is deprecated. Please use tf.nn.avg_pool2d
+ instead.
+
+    [Pre_Process_Pool] Tensor("rggnet_novae/x_dm_ft:0", shape=(?, 375, 1242, 2), dtype=float32) --> Tensor("rggnet_novae/Pre_Process_Po
+ol/AvgPool:0", shape=(?, 187, 621, 2), dtype=float32)
+    [Pre_Process_Pool] Tensor("rggnet_novae/pre_process/cond/Merge:0", shape=(?, 375, 1242, 3), dtype=float32) --> Tensor("rggnet_novae
+/Pre_Process_Pool/AvgPool_1:0", shape=(?, 187, 621, 3), dtype=float32)
+    [Feature DM ]:                              Tensor("rggnet_novae/Forward/Feature_Extraction/depth_map/pool5:0", shape=(?, 1, 1, 204
+8), dtype=float32)
+    [Feature CAM]:                              Tensor("rggnet_novae/Forward/Feature_Extraction/resnet_v2_50/pool5:0", shape=(?, 1, 1,
+2048), dtype=float32)
+    [Feature Concat]:                            Tensor("rggnet_novae/Forward/Feature_Extraction/resnet_v2_50/pool5:0", shape=(?, 1, 1,
+ 2048), dtype=float32)
+WARNING:tensorflow:From /root/rggnet/training/utils/tf_rggnet.py:26: flatten (from tensorflow.python.layers.core) is deprecated and wil
+l be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+    [Flattened ]:                             Tensor("rggnet_novae/Forward/Fuse/flatten/Reshape:0", shape=(?, 4096), dtype=float32)
+WARNING:tensorflow:From /root/rggnet/training/utils/tf_rggnet.py:29: dense (from tensorflow.python.layers.core) is deprecated and will
+be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow/python/ops/init_ops.py:1251: calling VarianceScaling.__init__
+ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /root/rggnet/training/utils/tf_rggnet.py:30: dropout (from tensorflow.python.layers.core) is deprecated and wil
+l be removed in a future version.
+Instructions for updating:
+Use keras.layers.dropout instead.
+    [MLPs ]:                              Tensor("rggnet_novae/Forward/MLPs/dropout_2/cond/Merge:0", shape=(?, 512), dtype=float32)
+    [y_hat_se3param]:                              Tensor("rggnet_novae/Forward/Regressor/y_hat_se3param:0", shape=(?, 6), dtype=float3
+2)
+Forward ===============================================End
+Loss ===============================================Start
+    [SE3 Loss]           ##################################
+    [y_hat_se3param]           Tensor("rggnet_novae/Forward/Regressor/y_hat_se3param:0", shape=(?, 6), dtype=float32)
+    [y_se3param    ]           Tensor("rggnet_novae/Placeholders/y_se3param:0", shape=(?, 6), dtype=float32)
+    [se3_pred     ]           Tensor("Loss/SE3_Loss/Reshape:0", shape=(4, 6), dtype=float32)
+    [se3_true     ]           Tensor("Loss/SE3_Loss/Reshape_1:0", shape=(4, 6), dtype=float32)
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/geomstats/backend/tensorflow.py:267: The name tf.trace is deprecated. Pl
+ease use tf.linalg.trace instead.
+
+[BaseCompute] Define restore graph fns ...
+Pretrained-Weights:  [{'load': True, 'model_dir': './resnet_v2_50_2017_04_14/resnet_v2_50.ckpt', 'excluded_tensor_names': [], 'included
+_tensor_names': []}]
+INFO:tensorflow:[Restoring weights] Setting ......
+INFO:tensorflow:[Restoring weights] From ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/conv1/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/shortcut/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resn
+et_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/shortcut/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resne
+t_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_1/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_2/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block1/unit_3/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/shortcut/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resn
+et_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/shortcut/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resne
+t_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_1/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_2/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_3/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block2/unit_4/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/shortcut/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resn
+et_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/shortcut/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resne
+t_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_1/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_2/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_3/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_4/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_5/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block3/unit_6/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/shortcut/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resn
+et_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/shortcut/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resne
+t_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_1/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_2/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/preact/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/preact/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2
+_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/preact/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/re
+snet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/preact/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_1
+4/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv1/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv1/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv1/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv1/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv1/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv2/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv2/BatchNorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14
+/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv2/BatchNorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/
+resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv2/BatchNorm/moving_mean missing in checkpoint ./resnet_v2_50_2017
+_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv2/BatchNorm/moving_variance missing in checkpoint ./resnet_v2_50_
+2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv3/weights missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_
+v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/block4/unit_3/bottleneck_v2/conv3/biases missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v
+2_50.ckpt
+WARNING:tensorflow:Variable depth_map/postnorm/gamma missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/postnorm/beta missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/postnorm/moving_mean missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable depth_map/postnorm/moving_variance missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable MLPs/mlp1/kernel missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable MLPs/mlp1/bias missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable MLPs/mlp2/kernel missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable MLPs/mlp2/bias missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable MLPs/mlp3/kernel missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable MLPs/mlp3/bias missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable Regressor/rotation/rot/kernel missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable Regressor/rotation/rot/bias missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable Regressor/translate/trans/kernel missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:Variable Regressor/translate/trans/bias missing in checkpoint ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+!@#!@#!@#!@# Restore graph fn:  <function assign_from_checkpoint_fn.<locals>.callback at 0x7f1d4b751560> None
+INFO:tensorflow:[Restoring weights] 550 variables will be restored from ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+Restored Graph Fns:  [<function assign_from_checkpoint_fn.<locals>.callback at 0x7f1d4b751560>]
+INFO:tensorflow:[Cosine Restart] Defining Optimizer ...
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:72: The name tf.train.cosine_decay_restarts is deprecated. P
+lease use tf.compat.v1.train.cosine_decay_restarts instead.
+
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:78: The name tf.summary.scalar is deprecated. Please use tf.
+compat.v1.summary.scalar instead.
+
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:79: The name tf.get_collection is deprecated. Please use tf.
+compat.v1.get_collection instead.
+
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:79: The name tf.GraphKeys is deprecated. Please use tf.compa
+t.v1.GraphKeys instead.
+
+WARNING:tensorflow:From /root/rggnet/training/models/rggnet_novae_model.py:80: The name tf.train.AdamOptimizer is deprecated. Please us
+e tf.compat.v1.train.AdamOptimizer instead.
+
+INFO:tensorflow:[Optimizing Var List] Optimizing all variables
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow/python/ops/math_grad.py:1205: add_dispatch_support.<locals>.w
+rapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+INFO:tensorflow:[BaseCompute] Graph constructed!
+INFO:tensorflow:OpenCV Version: 4.7.0
+INFO:tensorflow:Tensorflow Version: 1.14.0
+./save/rggnet_novae/1679087950.479662/ does not exits, creating one.
+INFO:tensorflow:[Stop Condition] Training will stop either epoch == 20 or validation error decrease < -0.05
+Scanning data ....
+Scanned 30 data in total!
+Scanning data ....
+Scanned 10 data in total!
+Scanning data ....
+Scanned 10 data in total!
+Loading training tfrecords: ['/root/kitti-raw/train_stereo//3.tfrecord', '/root/kitti-raw/train_stereo//0.tfrecord', '/root/kitti-raw/t
+rain_stereo//4.tfrecord', '/root/kitti-raw/train_stereo//9.tfrecord', '/root/kitti-raw/train_stereo//5.tfrecord', '/root/kitti-raw/trai
+n_stereo//1.tfrecord', '/root/kitti-raw/train_stereo//8.tfrecord', '/root/kitti-raw/train_stereo//7.tfrecord', '/root/kitti-raw/train_s
+tereo//2.tfrecord', '/root/kitti-raw/train_stereo//6.tfrecord', '/root/kitti-raw/train_stereo/rot/3.tfrecord', '/root/kitti-raw/train_s
+tereo/rot/0.tfrecord', '/root/kitti-raw/train_stereo/rot/4.tfrecord', '/root/kitti-raw/train_stereo/rot/9.tfrecord', '/root/kitti-raw/t
+rain_stereo/rot/5.tfrecord', '/root/kitti-raw/train_stereo/rot/1.tfrecord', '/root/kitti-raw/train_stereo/rot/8.tfrecord', '/root/kitti
+-raw/train_stereo/rot/7.tfrecord', '/root/kitti-raw/train_stereo/rot/2.tfrecord', '/root/kitti-raw/train_stereo/rot/6.tfrecord', '/root
+/kitti-raw/train_stereo/trans/3.tfrecord', '/root/kitti-raw/train_stereo/trans/0.tfrecord', '/root/kitti-raw/train_stereo/trans/4.tfrec
+ord', '/root/kitti-raw/train_stereo/trans/9.tfrecord', '/root/kitti-raw/train_stereo/trans/5.tfrecord', '/root/kitti-raw/train_stereo/t
+rans/1.tfrecord', '/root/kitti-raw/train_stereo/trans/8.tfrecord', '/root/kitti-raw/train_stereo/trans/7.tfrecord', '/root/kitti-raw/tr
+ain_stereo/trans/2.tfrecord', '/root/kitti-raw/train_stereo/trans/6.tfrecord', '/root/kitti-raw/train_stereo/trans//3.tfrecord', '/root
+/kitti-raw/train_stereo/trans//0.tfrecord', '/root/kitti-raw/train_stereo/trans//4.tfrecord', '/root/kitti-raw/train_stereo/trans//9.tf
+record', '/root/kitti-raw/train_stereo/trans//5.tfrecord', '/root/kitti-raw/train_stereo/trans//1.tfrecord', '/root/kitti-raw/train_ste
+reo/trans//8.tfrecord', '/root/kitti-raw/train_stereo/trans//7.tfrecord', '/root/kitti-raw/train_stereo/trans//2.tfrecord', '/root/kitt
+i-raw/train_stereo/trans//6.tfrecord', '/root/kitti-raw/train_stereo/rot//3.tfrecord', '/root/kitti-raw/train_stereo/rot//0.tfrecord',
+'/root/kitti-raw/train_stereo/rot//4.tfrecord', '/root/kitti-raw/train_stereo/rot//9.tfrecord', '/root/kitti-raw/train_stereo/rot//5.tf
+record', '/root/kitti-raw/train_stereo/rot//1.tfrecord', '/root/kitti-raw/train_stereo/rot//8.tfrecord', '/root/kitti-raw/train_stereo/
+rot//7.tfrecord', '/root/kitti-raw/train_stereo/rot//2.tfrecord', '/root/kitti-raw/train_stereo/rot//6.tfrecord']
+WARNING:tensorflow:From /root/rggnet/training/utils/tfrecords.py:94: The name tf.data.Iterator is deprecated. Please use tf.compat.v1.d
+ata.Iterator instead.
+
+WARNING:tensorflow:From /root/rggnet/training/utils/tfrecords.py:94: DatasetV1.output_types (from tensorflow.python.data.ops.dataset_op
+s) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.data.get_output_types(dataset)`.
+WARNING:tensorflow:From /root/rggnet/training/utils/tfrecords.py:94: DatasetV1.output_shapes (from tensorflow.python.data.ops.dataset_o
+ps) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.data.get_output_shapes(dataset)`.
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow/python/data/ops/iterator_ops.py:348: Iterator.output_types (f
+rom tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.data.get_output_types(iterator)`.
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow/python/data/ops/iterator_ops.py:349: Iterator.output_shapes (
+from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.data.get_output_shapes(iterator)`.
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow/python/data/ops/iterator_ops.py:351: Iterator.output_classes
+(from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.data.get_output_classes(iterator)`.
+Scanning data ....
+Scanned 10 data in total!
+Scanning data ....
+Scanned 10 data in total!
+Loading testing tfrecords: ['/root/kitti-raw/test_stereo/T1//3.tfrecord', '/root/kitti-raw/test_stereo/T1//0.tfrecord', '/root/kitti-ra
+w/test_stereo/T1//4.tfrecord', '/root/kitti-raw/test_stereo/T1//9.tfrecord', '/root/kitti-raw/test_stereo/T1//5.tfrecord', '/root/kitti
+-raw/test_stereo/T1//1.tfrecord', '/root/kitti-raw/test_stereo/T1//8.tfrecord', '/root/kitti-raw/test_stereo/T1//7.tfrecord', '/root/ki
+tti-raw/test_stereo/T1//2.tfrecord', '/root/kitti-raw/test_stereo/T1//6.tfrecord', '/root/kitti-raw/test_stereo/T2a//3.tfrecord', '/roo
+t/kitti-raw/test_stereo/T2a//0.tfrecord', '/root/kitti-raw/test_stereo/T2a//4.tfrecord', '/root/kitti-raw/test_stereo/T2a//9.tfrecord',
+ '/root/kitti-raw/test_stereo/T2a//5.tfrecord', '/root/kitti-raw/test_stereo/T2a//1.tfrecord', '/root/kitti-raw/test_stereo/T2a//8.tfre
+cord', '/root/kitti-raw/test_stereo/T2a//7.tfrecord', '/root/kitti-raw/test_stereo/T2a//2.tfrecord', '/root/kitti-raw/test_stereo/T2a//
+6.tfrecord']
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/logging/__init__.py", line 1025, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.7/logging/__init__.py", line 869, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.7/logging/__init__.py", line 608, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.7/logging/__init__.py", line 369, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/root/rggnet/training/train_start_rggnet_novae.py", line 7, in <module>
+    training_app.run(os.path.join('../config', config_file))
+  File "/root/rggnet/training/apps/rggnet_novae_training.py", line 29, in run
+    trainer.train(data_generator=data_generator, restore_graph_fns=compute_model.restore_graph_fns)
+  File "/root/rggnet/training/core/base_trainer.py", line 230, in train
+    self.logger.info('Opening a session and training started ...', restore_graph_fns)
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/platform/tf_logging.py", line 156, in info
+    get_logger().info(msg, *args, **kwargs)
+Message: 'Opening a session and training started ...'
+Arguments: ([<function assign_from_checkpoint_fn.<locals>.callback at 0x7f1d4b751560>],)
+INFO:tensorflow:restore_graph_fns: [<function assign_from_checkpoint_fn.<locals>.callback at 0x7f1d4b751560>]
+INFO:tensorflow:Assign params to target tensor ...
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow/python/training/saver.py:1276: checkpoint_exists (from tensor
+flow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ./resnet_v2_50_2017_04_14/resnet_v2_50.ckpt
+WARNING:tensorflow:From /root/rggnet/training/core/base_trainer.py:220: The name tf.train.Saver is deprecated. Please use tf.compat.v1.
+train.Saver instead.
+
+WARNING:tensorflow:From /root/rggnet/training/core/base_trainer.py:221: The name tf.summary.merge_all is deprecated. Please use tf.comp
+at.v1.summary.merge_all instead.
+
+WARNING:tensorflow:From /root/rggnet/training/core/base_trainer.py:224: The name tf.summary.FileWriter is deprecated. Please use tf.com
+pat.v1.summary.FileWriter instead.
+
+INFO:tensorflow:Graph size at beginning of epoch : 8886249
+INFO:tensorflow:0 / 20 th epoch, training ...
+WARNING:tensorflow:From /root/rggnet/training/core/base_trainer.py:166: The name tf.logging.warn is deprecated. Please use tf.compat.v1
+.logging.warn instead.
+
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[0 th epoch] Average train loss: 0.3175698380087401
+INFO:tensorflow:Snapshot of 0 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_0_
+INFO:tensorflow:1 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[1 th epoch] Average train loss: 0.11200940643216704
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[1 th epoch]: saving the best model to ./save/rggnet_novae/1679087950.479662/best
+INFO:tensorflow:[1 th epoch]: Average validation loss: 0.08341543446525489
+INFO:tensorflow:Snapshot of 1 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_1_
+INFO:tensorflow:2 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[2 th epoch] Average train loss: 0.1283755398966692
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[2 th epoch]: saving the best model to ./save/rggnet_novae/1679087950.479662/best
+INFO:tensorflow:[2 th epoch]: Average validation loss: 0.07665015587417207
+INFO:tensorflow:Snapshot of 2 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_2_
+INFO:tensorflow:3 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[3 th epoch] Average train loss: 0.10443501735290328
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[3 th epoch]: Average validation loss: 0.07667516651425031
+INFO:tensorflow:Snapshot of 3 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_3_
+INFO:tensorflow:4 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[4 th epoch] Average train loss: 0.09734702482075243
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[4 th epoch]: saving the best model to ./save/rggnet_novae/1679087950.479662/best
+INFO:tensorflow:[4 th epoch]: Average validation loss: 0.07490747381407435
+INFO:tensorflow:Snapshot of 4 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_4_
+INFO:tensorflow:5 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[5 th epoch] Average train loss: 0.09340023753474226
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[5 th epoch]: Average validation loss: 0.07506708959394162
+INFO:tensorflow:Snapshot of 5 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_5_
+INFO:tensorflow:6 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[6 th epoch] Average train loss: 0.10291174445282686
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[6 th epoch]: Average validation loss: 0.2978685798105037
+INFO:tensorflow:Snapshot of 6 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_6_
+INFO:tensorflow:7 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[7 th epoch] Average train loss: 0.08888837525046074
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[7 th epoch]: Average validation loss: 0.28023394330008194
+INFO:tensorflow:Snapshot of 7 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_7_
+INFO:tensorflow:8 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[8 th epoch] Average train loss: 0.08311582217969886
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[8 th epoch]: saving the best model to ./save/rggnet_novae/1679087950.479662/best
+INFO:tensorflow:[8 th epoch]: Average validation loss: 0.06730917365391656
+INFO:tensorflow:Snapshot of 8 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_8_
+INFO:tensorflow:9 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[9 th epoch] Average train loss: 0.07869751844089944
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[9 th epoch]: Average validation loss: 0.06828716102212963
+INFO:tensorflow:Snapshot of 9 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_9_
+INFO:tensorflow:10 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[10 th epoch] Average train loss: 0.07615938031865464
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[10 th epoch]: saving the best model to ./save/rggnet_novae/1679087950.479662/best
+INFO:tensorflow:[10 th epoch]: Average validation loss: 0.06060044891615905
+INFO:tensorflow:Snapshot of 10 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_10_
+INFO:tensorflow:11 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[11 th epoch] Average train loss: 0.07289452983213442
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[11 th epoch]: Average validation loss: 0.07775535921354106
+INFO:tensorflow:Snapshot of 11 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_11_
+INFO:tensorflow:12 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[12 th epoch] Average train loss: 0.07047107824488179
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[12 th epoch]: Average validation loss: 0.0651967468311881
+INFO:tensorflow:Snapshot of 12 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_12_
+INFO:tensorflow:13 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[13 th epoch] Average train loss: 0.06872436253458157
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[13 th epoch]: Average validation loss: 0.0654036226765354
+INFO:tensorflow:Snapshot of 13 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_13_
+INFO:tensorflow:14 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[14 th epoch] Average train loss: 0.08019887339640093
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[14 th epoch]: Average validation loss: 0.10291585189723733
+INFO:tensorflow:Snapshot of 14 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_14_
+INFO:tensorflow:15 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[15 th epoch] Average train loss: 0.07520964821813615
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[15 th epoch]: Average validation loss: 0.06647632153022408
+INFO:tensorflow:Snapshot of 15 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_15_
+INFO:tensorflow:16 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[16 th epoch] Average train loss: 0.07266720160507001
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[16 th epoch]: saving the best model to ./save/rggnet_novae/1679087950.479662/best
+INFO:tensorflow:[16 th epoch]: Average validation loss: 0.059749541269375546
+INFO:tensorflow:Snapshot of 16 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_16_
+INFO:tensorflow:17 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[17 th epoch] Average train loss: 0.0706134748353914
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[17 th epoch]: Average validation loss: 0.09757714696449808
+INFO:tensorflow:Snapshot of 17 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_17_
+INFO:tensorflow:18 / 20 th epoch, training ...
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[18 th epoch] Average train loss: 0.06989519168007803
+WARNING:tensorflow:End of data .
+INFO:tensorflow:[18 th epoch]: Average validation loss: 0.06672038871905592
+INFO:tensorflow:Snapshot of 18 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_18_
+INFO:tensorflow:19 / 20 th epoch, training ...
+WARNING:tensorflow:Pbbly met some issue on matrix not invertible, skip this example, skip one epoch
+WARNING:tensorflow:Pbbly met some issue on matrix not invertible, skip this example, skip one epoch
+INFO:tensorflow:Snapshot of 19 th epoch is saved to ./save/rggnet_novae/1679087950.479662/eps_19_
+INFO:tensorflow:Training ended and model file is in here: ./save/rggnet_novae/1679087950.479662/
+root@inside-DOCKER:~/rggnet#

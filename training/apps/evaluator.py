@@ -25,7 +25,7 @@ class Evaluator(object):
     def process(self, config_fp, model_name, res_fp):
         # Loading Config
         config_abs_fp = os.path.join(os.path.dirname(__file__), config_fp)
-        config = Box(yaml.load(open(config_abs_fp, 'r').read()))
+        config = Box(yaml.safe_load(open(config_abs_fp, 'r').read()))
         config = config[model_name]
         print("Evaluating {}.".format(model_name))
         print("Config is  {}".format(config))
@@ -61,6 +61,14 @@ class Evaluator(object):
                     _x_cam_batch = _x_cam_batch / 255.
                     _y_hat_se3param = inference_server.inference(data=[_x_dm_batch, _x_cam_batch])
 
+                    # _x_dm_batch, _x_cam_batch, r_x_dm_batch, r_x_cam_batch, _gt_se3param = sess.run([
+                    #     batch_next_op['x_dm'], batch_next_op['x_cam'],
+                    #     batch_next_op['r_x_dm'], batch_next_op['r_x_cam'],
+                    #     batch_next_op['y_se3param']
+                    # ])
+                    # r_x_cam_batch = r_x_cam_batch / 255.
+                    # _y_hat_se3param = inference_server.inference(data=[_x_dm_batch, _x_cam_batch, r_x_dm_batch, r_x_cam_batch])
+                    # print('pred:', _y_hat_se3param, 'gt:', _gt_se3param)
                     se3_error = self.cal_metrics(
                         se3_pred=np.squeeze(np.array(_y_hat_se3param), 0),
                         se3_true=np.array(_gt_se3param),
@@ -73,16 +81,17 @@ class Evaluator(object):
                         group=SE3_GROUP,
                         metric=metric
                     )
+                    # print('err:', se3_error[0], 'noise:', se3_noise[0], 'gt:', _gt_se3param[0])
                     RR = np.array(se3_error) / np.array(se3_noise)
                     RRs.append(RR)
                     MRR = 1 - np.mean(np.array(RRs))
-                    if cnt == 1:
-                        print("MRR Explain:")
-                        print("RR = np.array(se3_error) / np.array(se3_noise)")
-                        print("np.array(se3_error) = {}".format(np.array(se3_error)))
-                        print("np.array(se3_noise) = {}".format(np.array(se3_noise)))
-                        print("RR                   = {}".format(RR))
-                        print("{} / {} = {}".format(np.array(se3_error)[0], np.array(se3_noise)[0], RR[0]))
+                    # if cnt == 1:
+                    #     print("MRR Explain:")
+                    #     print("RR = np.array(se3_error) / np.array(se3_noise)")
+                    #     print("np.array(se3_error) = {}".format(np.array(se3_error)))
+                    #     print("np.array(se3_noise) = {}".format(np.array(se3_noise)))
+                    #     print("RR                   = {}".format(RR))
+                    #     print("{} / {} = {}".format(np.array(se3_error)[0], np.array(se3_noise)[0], RR[0]))
                     se3_gts.append(np.array(_gt_se3param))
                     se3_preds.append(np.array(_y_hat_se3param))
                     se3_noises.append(se3_noise)
@@ -100,8 +109,8 @@ class Evaluator(object):
             except tf.errors.OutOfRangeError as e:
                 print("End of data .")
         print("Final:  {} ({}%)".format(
-            np.round(se3_errors_mean, 4),
-            np.round(MRR * 100., 4)))
+           np.round(se3_errors_mean, 4),
+           np.round(MRR * 100., 4)))
 
         if not os.path.isdir(res_fp):
             print("{} does not exits, creating one.".format(res_fp))

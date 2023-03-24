@@ -7,12 +7,12 @@
 env:
   description: 'an environment reading static_file from file system to pipe into the inference app'
   fs_mode:
-    force_shape: # due to a different drive
-      H: 375
-      W: 1242
+#    force_shape: # due to a different drive
+#      H: 375
+#      W: 1242
     reduce_lidar_line_to: 16
-    raw_data_dir: '/root/kitti/raw/test' # Replace this 0070 with whatever drive you would like to test
-    res_data_dir: '/root/kitti/server/results' # Make sure you change this to your fav localtion
+    raw_data_dir: '/root/kitti-raw/test_stereo'
+    res_data_dir: '/root/rggnet/stereo-novae-results' # Make sure you change this to your fav localtion
     number: False
     off_range:
       rot: 10        # deg
@@ -24,6 +24,17 @@ env:
 
 
 app:
+  stereo_rggnet:
+    pb_fp: '/root/rggnet/prod/stereo_rggnet_novae/best.pb'
+    tensors:
+    inputs:
+    - 'stereorggnet_novae/Placeholders/x_dm:0'
+    - 'stereorggnet_novae/Placeholders/x_cam:0'
+    - 'stereorggnet_novae/Placeholders/r_x_dm:0'
+    - 'stereorggnet_novae/Placeholders/r_x_cam:0'
+    outputs:
+    - 'stereorggnet_novae/y_hat_se3param:0'
+
   rggnet:
     pb_fp: '/root/rggnet/training/prod/rggnet/best.pb'
     tensors:

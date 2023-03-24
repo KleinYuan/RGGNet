@@ -4,7 +4,7 @@ from box import Box
 import tensorflow as tf
 from ..utils.inference import create_inference_graph
 from ..utils.freeze import freeze_graph_from_file
-from ..utils.tf_rggnet import rggnet_forward
+from ..models.stereorggnet_novae_model import stereo_rggnet_forward
 import fire
 
 
@@ -29,10 +29,15 @@ class InferenceModel(object):
             with tf.variable_scope('Placeholders'):
                 self.x_dm = tf.placeholder(tf.float32, [None] + self.placeholders_configs.inputs.x_dm.shape, name='x_dm')  # Depth Maps
                 self.x_cam = tf.placeholder(tf.float32, [None] + self.placeholders_configs.inputs.x_cam.shape, name='x_cam')  # Camera
+                self.r_x_dm = tf.placeholder(tf.float32, [None] + self.placeholders_configs.inputs.x_dm.shape, name='r_x_dm')
+                self.r_x_cam = tf.placeholder(tf.float32, [None] + self.placeholders_configs.inputs.x_cam.shape, name='r_x_cam')
                 self.is_training = False
 
             self.x_dm_ft = tf.identity(self.x_dm[:, :, :, 3:5], name='x_dm_ft')
-            self.y_hat_se3param, self.x_dm_ft_pool, self.x_cam_pool = rggnet_forward(x_dm_ft=self.x_dm_ft, x_cam=self.x_cam, is_training=self.is_training)
+            self.r_x_dm_ft = tf.identity(self.r_x_dm[:, :, :, 3:5], name='r_x_dm_ft')
+            self.y_hat_se3param = stereo_rggnet_forward(
+                x_dm_ft=self.x_dm_ft, r_x_dm_ft=self.r_x_dm_ft,
+                x_cam=self.x_cam, r_x_cam=self.r_x_cam, is_training=self.is_training)
 
     def define_graph(self):
         self.logger.info('[InferenceModel] Constructing graph now...')

@@ -1,4 +1,6 @@
-tensorflow-gpu==1.14
+tensorflow-gpu==1.14.0
+protobuf==3.20.1
+opencv-python
 fire
 pyyaml
 python-box

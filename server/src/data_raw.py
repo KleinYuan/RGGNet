@@ -118,7 +118,10 @@ def get_raw_data_stats(data_fp, datatype='sync'):
         "num_data_stats": {}
     }
     data_fps = {}
-    for root, dirs, files in os.walk(data_fp):
+    print('at: ', data_fp)
+    for root, dirs, files in os.walk(data_fp, followlinks=True):
+        print('dirs: ', dirs)
+        print('files: ', files)
         if "velodyne_points" in dirs:
             path = root.split(os.sep)
             if datatype in path[-1]:

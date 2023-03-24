@@ -26,7 +26,7 @@ class Evaluator(object):
         print("Running evaluation of {} with given data ? {}".format(model_name, given_data is not None))
         # Loading Config
         config_abs_fp = os.path.join(os.path.dirname(__file__), config_fp)
-        config = Box(yaml.load(open(config_abs_fp, 'r').read()))
+        config = Box(yaml.safe_load(open(config_abs_fp, 'r').read()))
         # Load environment
         env = Env(config=config.env, model_name=model_name)
         app_config = config.app[model_name]

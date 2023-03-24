@@ -98,6 +98,30 @@ class BaseModel(object):
 
         self.define_graph()
 
+    def check_model(self, model, variables_to_restore):
+        print('@#@#$@#$@#$@#$ !!!!!!! model: ', model)
+        # print('var: ', variables_to_restore[0].name)
+        variables_in_resnet = tf.train.list_variables(model)
+        variable_map = {}
+        # print(variables_in_resnet)
+        # print(variables_to_restore)
+        for var in variables_in_resnet:
+            from_var_name = var[0]
+
+            for dest_name in ['left_cam', 'right_cam']:#, 'left_dm', 'right_dm']:
+                to_var_name = from_var_name.replace('resnet_v2_50', dest_name)
+                for my_var in variables_to_restore:
+                    if my_var.name.split(':')[0] == to_var_name:
+                        variable_map[from_var_name] = my_var
+
+            # to_var_name = from_var_name.replace('resnet_v2_50', 'right_cam')
+            # for my_var in variables_to_restore:
+            #     if my_var.name.split(':')[0] == to_var_name:
+            #         variable_map[from_var_name] = my_var
+
+        # print('var: ', variable_map)
+        return variable_map
+
     def get_restore_weights_fn(self, model_dir=None, ckpts_dir=None, included_tensor_names=None, excluded_tensor_names=None):
         """
         https://www.tensorflow.org/api_docs/python/tf/contrib/framework/get_variables_to_restore
@@ -117,16 +141,22 @@ class BaseModel(object):
             variables_to_restore = tf.contrib.framework.get_variables_to_restore(
                 include=included_tensor_names,
                 exclude=excluded_tensor_names)
-            restore_graph_fn = tf.contrib.framework.assign_from_checkpoint_fn(model_dir, variables_to_restore,
+            # print('Variables to restore:', variables_to_restore)
+            variable_map = self.check_model(model_dir, variables_to_restore)
+            restore_graph_fn = tf.contrib.framework.assign_from_checkpoint_fn(model_dir, variable_map,
                                                                               ignore_missing_vars=True)
+            # restore_graph_fn = tf.contrib.framework.assign_from_checkpoint_fn(model_dir, variables_to_restore,
+                                                                            #   ignore_missing_vars=True)
+            print("!@#!@#!@#!@# Restore graph fn: ", restore_graph_fn, included_tensor_names)
 
         self.logger.info("[Restoring weights] {} variables will be restored from {}".format(len(variables_to_restore), model_dir))
         return restore_graph_fn
 
     def define_restore_graph_fns(self):
         print("[BaseCompute] Define restore graph fns ...")
+        fn = []
         if len(self.config.train.pre_trained_weights) > 0:
-            print(self.config.train.pre_trained_weights)
+            print('Pretrained-Weights: ', self.config.train.pre_trained_weights)
             for _pre_trained_weights in self.config.train.pre_trained_weights:
                 if _pre_trained_weights.load:
                     _excluded_tensor_names = None \
@@ -136,19 +166,25 @@ class BaseModel(object):
                         if len(_pre_trained_weights.included_tensor_names) == 0 \
                         else _pre_trained_weights.included_tensor_names
                     if 'ckpts_dir' in _pre_trained_weights:
-                        self.restore_graph_fns.append(
-                            self.get_restore_weights_fn(
+                        f = self.get_restore_weights_fn(
                             ckpts_dir=_pre_trained_weights.ckpts_dir,
                             excluded_tensor_names=_excluded_tensor_names,
-                            included_tensor_names=_included_tensor_names))
+                            included_tensor_names=_included_tensor_names)
+                        if f:
+                            fn.append(f)
                     elif 'model_dir' in _pre_trained_weights:
-                        self.restore_graph_fns.append(
-                            self.get_restore_weights_fn(
+                        f = self.get_restore_weights_fn(
                             model_dir=_pre_trained_weights.model_dir,
                             excluded_tensor_names=_excluded_tensor_names,
-                            included_tensor_names=_included_tensor_names))
+                            included_tensor_names=_included_tensor_names)
+                        if f:
+                            fn.append(f)
                     else:
                         raise Exception("Neither ckpts_dir nor model_dir found in the config")
+        if len(fn) <= 0:
+            raise Exception("Failed to restore weights to graph.")
+        self.restore_graph_fns = fn
+        print('Restored Graph Fns: ', self.restore_graph_fns)
 
     def define_graph(self):
         self.logger.info('[BaseCompute] Constructing graph now...')

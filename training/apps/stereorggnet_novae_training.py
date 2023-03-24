@@ -2,16 +2,17 @@ import os
 import yaml
 from box import Box
 import tensorflow as tf
-from ..models.rggnet_novae_model import Model
-from ..models.rggnet_novae_trainer import BaseTrainer
+from ..models.stereorggnet_novae_model import Model
+from ..models.stereorggnet_novae_trainer import BaseTrainer
 from ..core.base_data_generator import BaseDataGenerator
 
 
-def run(config_fp='../config/rggnet_novae.yaml'):
+def run(config_fp='../config/stereorggnet_novae.yaml'):
     """
     This is a base training app.
     In most cases, you don't need to modify any lines of this script.
     """
+    print('----------- TRAINING STEREO --------------------- ')
     config_abs_fp = os.path.join(os.path.dirname(__file__), config_fp)
     config = Box(yaml.safe_load(open(config_abs_fp, 'r').read()))
     # Config logger
@@ -19,6 +20,8 @@ def run(config_fp='../config/rggnet_novae.yaml'):
     logger = tf.logging
     # Initialize Four Modules: Data, Trainer, Net, Graph
     compute_model = Model(config=config, logger=logger)
+
+    print('----- Instantiating BaseTrainer ------------ ')
     trainer = BaseTrainer(compute_model=compute_model, config=config, logger=logger)
 
     # Run Training
