@@ -248,4 +248,4 @@ On GTX 2080Ti, it runs 24ms.
 ### Clarification
 
 This repo is a refactored version based on my internal experimental repository (which is really messy) for my publications. If you see potential issues/bugs or have questions regarding my works, please 
-feel free to email me ([kaiwen@ece.ubc.ca](kaiwen@ece.ubc.ca)). If you have software issues such as docker, Makefile, CUDA, tensorflow, ...., please just google it and I trust you shall figure it out eventually.
+feel free to email me  (kaiwen dot yuan1992 at gmail dot com). As I graduated, UBC widthdrew my school email kaiwen@ece.ubc.ca, which is not valid any more. If you have software issues such as docker, Makefile, CUDA, tensorflow, ...., please just google it and I trust you shall figure it out eventually.
